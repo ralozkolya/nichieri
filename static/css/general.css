@@ -1,0 +1,39 @@
+html, body {
+	height: 100%;
+}
+
+img {
+	max-width: 100%;
+}
+
+
+/*	GENERAL MARKUP WITH STICKY FOOTER	*/
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.header {
+	position: relative;
+	z-index: 50;
+}
+
+.content {
+	padding-top: 20px;
+	padding-bottom: 140px;
+}
+
+.footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+
+/*	HELPERS	*/
+
+.unstyled {
+	color: inherit !important;
+	text-decoration: none !important;
+}
