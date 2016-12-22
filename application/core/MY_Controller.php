@@ -15,27 +15,8 @@ class MY_Controller extends CI_Controller {
 		parent::__construct();
 
 		set_language();
-	}
 
-	protected function redirect($path = NULL) {
-
-		if(!empty($this->data[ERROR])) {
-			$this->session->set_flashdata(ERROR, $this->data[ERROR]);
-		}
-
-		if(!empty($this->data[SUCCESS])) {
-			$this->session->set_flashdata(SUCCESS, $this->data[SUCCESS]);
-		}
-
-		if($path) {
-			redirect($path);
-		}
-
-		elseif($this->agent->referrer()) {
-			redirect($this->agent->referrer());
-		}
-
-		redirect($this->data['redirect_base']);
+		$this->load->language('general');
 	}
 
 	protected function message($message, $type = SUCCESS, $redirects = TRUE) {
