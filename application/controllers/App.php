@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Site extends MY_Controller {
+class App extends MY_Controller {
 
 	public function index() {
 		$this->view('pages/home');
