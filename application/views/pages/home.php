@@ -9,17 +9,13 @@
 
 		<?php $this->load->view('elements/header'); ?>
 
-		<div class="content">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						watwa 
-					</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					watwa 
 				</div>
 			</div>
 		</div>
-
-		<?php $this->load->view('elements/footer'); ?>
 
 	</div>
 

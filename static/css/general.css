@@ -1,5 +1,5 @@
-html, body {
-	height: 100%;
+body {
+	color: white;
 }
 
 img {
@@ -10,24 +10,11 @@ img {
 /*	GENERAL MARKUP WITH STICKY FOOTER	*/
 
 .wrapper {
-	min-height: 100%;
-	position: relative;
-}
-
-.header {
-	position: relative;
-	z-index: 50;
-}
-
-.content {
-	padding-top: 20px;
-	padding-bottom: 140px;
-}
-
-.footer {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
+	width: 810px;
+	margin: 0 auto;
+	background: url('../img/bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 

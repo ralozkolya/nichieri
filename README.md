@@ -1,1 +1,1 @@
-Initial setup for CodeIgniter-based projects
+Nichier Facebook app repository
