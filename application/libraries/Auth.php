@@ -10,16 +10,15 @@ class Auth {
 		$this->CI =& get_instance();
 
 		$this->CI->load->library('session');
-		$this->CI->load->model('User');
+		$this->CI->load->model(['User_admin']);
 	}
 
-	public function login($email, $password) {
+	public function login($username, $password) {
 
-		$user = $this->check($email, $password);
+		$user = $this->check($username, $password);
 
 		if($user) {
 			
-			$this->CI->User->clear_token($user->id);
 			$this->CI->session->set_userdata(USER, $user);
 
 			return TRUE;
@@ -30,11 +29,10 @@ class Auth {
 
 	public function login_by_id($id) {
 
-		$user = $this->CI->User->get($id);
+		$user = $this->CI->User_admin->get($id);
 
 		if($user) {
 
-			$this->CI->User->clear_token($user->id);
 			$this->CI->session->set_userdata('user', $user);
 		}
 
@@ -52,7 +50,7 @@ class Auth {
 
 		if($user) {
 
-			$user = $this->CI->User->check($user->id, $user->email);
+			$user = $this->CI->User_admin->check($user->id, $user->username);
 
 			if($user) {
 				return TRUE;
@@ -74,16 +72,16 @@ class Auth {
 
 		$user = $this->get_current_user();
 
-		$user = $this->CI->User->get($user->id);
+		$user = $this->CI->User_admin->get($user->id);
 
 		$this->CI->session->set_userdata(USER, $user);
 
 		return $user;
 	}
 
-	public function check($email, $password) {
+	public function check($username, $password) {
 
-		$user = $this->CI->User->get_by_key('email', $email);
+		$user = $this->CI->User_admin->get_by_key('username', $username);
 
 		if($user) {
 

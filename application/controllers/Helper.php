@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Helper extends MY_Controller {
 
 	public function index() {
-		$this->view('add_to_fb');
+		$this->view('pages/add_to_fb');
 	}
 
-	public function redirect() {
+	public function redirect($path = NULL) {
 		redirect('https://www.facebook.com/gpcvizrunoTsicocxleze/app/624359667744524/');
 	}
 

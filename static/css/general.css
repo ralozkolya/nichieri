@@ -1,24 +1,70 @@
 body {
-	color: white;
+	font-family: "BPG Arial", Arial, Sans-serif;
 }
 
 img {
 	max-width: 100%;
 }
 
-
-/*	GENERAL MARKUP WITH STICKY FOOTER	*/
-
 .wrapper {
 	width: 810px;
+	min-height: 600px;
 	margin: 0 auto;
 	background: url('../img/bg.png');
 	background-repeat: no-repeat;
 	background-size: cover;
+	color: white;
 }
 
+.chosen {
+	position: relative;
+	margin: 10px auto;
+	width: 230px;
+}
 
-/*	HELPERS	*/
+.chosen > .image {
+	width: 100%;
+	height: 200px;
+	background-size: cover;
+	background-position: center;
+}
+
+.chosen > .gradient {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	background-image: linear-gradient(to top, #29057f, rgba(142, 116, 204, 0.56) 35%, rgba(255, 255, 255, 0));
+}
+
+.gradient > .desc {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 8px 15px;
+}
+
+.vote-button {
+	height: 60px;
+	padding: 10px 20px;
+	font-size: 15px;
+	background: white;
+	color: #4611c6;
+	overflow: hidden;
+}
+
+.vote {
+	color: #4b4b4b;
+	font-size: 18px;
+	padding: 8px 0;
+}
+
+.star {
+	color: #4611c6;
+	margin: 0 5px;
+	font-size: 20px;
+}
 
 .unstyled {
 	color: inherit !important;

@@ -1,0 +1,95 @@
+body {
+	font-family: "BPG Arial", Arial, Sans-serif;
+	background: #f2f2f2;
+}
+
+img {
+	max-width: 100%;
+}
+
+.sidebar {
+	padding: 10px 0;
+}
+
+.navigation {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+}
+
+.navigation a {
+	display: inline-block;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+
+/* HELPERS */
+
+.unstyled, .unstyled:hover, .unstyled:focus {
+	color: inherit;
+	text-decoration: none;
+}
+
+.delete, .delete:hover, .delete:focus {
+	color: #c55;
+}
+
+.glyph-container {
+	width: 30px;
+}
+
+.thumb {
+	position: relative;
+	float: left;
+	width: 48%;
+	height: 0;
+	padding: 5px;
+	padding-top: 30%;
+	text-align: center;
+	margin: 5px 1%;
+}
+
+.thumb > img {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	max-width: 100%;
+	max-height: 100%;
+	transform: translateX(-50%);
+}
+
+.thumb > .delete {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+	.sidebar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 250px;
+		min-height: 100%;
+		background: white;
+	}
+
+	.content {
+		margin-left: 270px;
+		padding-top: 20px;
+	}
+
+	.navigation {
+		text-align: right;
+	}
+
+	.navigation a:hover, .navigation a.active {
+		border-right: solid 2px #f7931e;
+	}
+}

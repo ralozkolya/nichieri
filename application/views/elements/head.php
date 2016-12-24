@@ -10,6 +10,13 @@
 
 <link rel="icon" type="image/png" href="<?php echo static_url('img/favicon.png'); ?>">
 
+<script>
+	var url = {
+		base: '<?php echo base_url(); ?>',
+		finish: '<?php echo base_url('finish'); ?>',
+	};
+</script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="<?php echo static_url('js/general.js?v='.V); ?>"></script>

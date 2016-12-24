@@ -21,6 +21,11 @@ class App extends MY_Controller {
 	}
 
 	public function index() {
+
+		$this->load->model('Chosen');
+
+		$this->data['chosen_ones'] = $this->Chosen->get_with_votes($this->data['user']->id);
+
 		$this->view('pages/home');
 	}
 

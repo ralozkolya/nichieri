@@ -7,14 +7,14 @@
 </head>
 <body>
 
-	<div class="wrapper">
+	<div class="wrapper bpg-nino">
 
 		<?php $this->load->view('elements/header'); ?>
 		
-		<div class="bpg-nino loading">
+		<div class="loading">
 			<h3><?php echo lang('loading'); ?></h3>
 		</div>
-		<div class="bpg-nino require-login">
+		<div class="require-login">
 			<h3><?php echo lang('require_login'); ?></h3>
 		</div>
 

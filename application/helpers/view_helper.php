@@ -19,15 +19,16 @@ function form_fields($fields) {
 
 		$name = @get_value($f['name']);
 		$value = @get_value($f['value']);
+		$append = @get_value($f['append']);
 		$type = @get_value($f['type'], 'text');
 
-		$response[] = input_field($name, $value, $type);
+		$response[] = input_field($name, $value, $type, $append);
 	}
 
 	return $response;
 }
 
-function input_field($name, $value = NULL, $type = 'text') {
+function input_field($name, $value = NULL, $type = 'text', $append = NULL) {
 
 	$ci =& get_instance();
 
@@ -35,6 +36,7 @@ function input_field($name, $value = NULL, $type = 'text') {
 		'name' => $name,
 		'value' => $value,
 		'type' => $type,
+		'append' => $append,
 	], TRUE);
 }
 
