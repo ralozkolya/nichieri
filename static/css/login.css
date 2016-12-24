@@ -1,3 +1,13 @@
 .require-login {
 	display: none;
+	padding: 0 30px;
+}
+
+#login-button {
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	font-size: 25px;
+	padding: 10px 40px;
+	transform: translateX(-50%);
 }

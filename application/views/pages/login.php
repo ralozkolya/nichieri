@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<div class="wrapper bpg-nino">
+	<div class="wrapper bpg-nino text-center">
 
 		<?php $this->load->view('elements/header'); ?>
 		
