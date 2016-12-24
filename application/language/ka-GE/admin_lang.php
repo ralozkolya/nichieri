@@ -34,7 +34,7 @@ $lang['body'] = 'შიგთავსი';
 $lang['change_password'] = 'პაროლის შეცვლა';
 $lang['current_password'] = 'მიმდინარე პაროლი';
 $lang['new_password'] = 'ახალი პაროლი';
-$lang['repeat_password'] = 'გაიმერორეთ ახალი პაროლი';
+$lang['repeat_password'] = 'გაიმეორეთ ახალი პაროლი';
 $lang['enable_all'] = 'ყველას გააქტიურება';
 
 
