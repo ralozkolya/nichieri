@@ -2,6 +2,7 @@
 <html lang="<?php echo get_lang_code(get_lang()); ?>">
 <head>
 	<?php $this->view('elements/head'); ?>
+	<link rel="stylesheet" href="<?php echo static_url('css/home.css?v='.V); ?>">
 </head>
 <body>
 
@@ -40,6 +41,14 @@
 				<?php else: ?>
 					<h3 class="bpg-nino text-center"><?php echo lang('nothing_found'); ?></h3>
 				<?php endif; ?>
+			</div>
+			<div class="row bottom-row">
+				<div class="col-xs-4 text-left">
+					dsa
+				</div>
+				<div class="col-xs-4">
+					counter
+				</div>
 			</div>
 		</div>
 
