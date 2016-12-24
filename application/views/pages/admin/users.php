@@ -19,7 +19,7 @@
 				<div class="col-md-6">
 					<h3><?php echo lang('users'); ?></h3>
 					<?php echo admin_table('User', $items, [
-						'fb_img', 'fb_id', 'name', 
+						'fb_img', 'name', 'fb_id',
 					]); ?>
 				</div>
 			</div>

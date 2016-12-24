@@ -91,7 +91,7 @@ class Auth {
 			}
 		}
 
-		return FALSE;
+		return NULL;
 	}
 
 }

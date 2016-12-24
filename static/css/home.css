@@ -1,7 +1,20 @@
+.wrapper {
+	overflow: hidden;
+}
+
+.sagas-chosen {
+	font-size: 18px;
+	margin: 10px 0;
+}
+
+.sagas-chosen > img {
+	margin-bottom: 5px;
+}
+
 .chosen {
 	position: relative;
 	margin: 10px auto;
-	width: 230px;
+	width: 260px;
 }
 
 .chosen > .image {
@@ -17,7 +30,7 @@
 	left: 0;
 	width: 100%;
 	height: 200px;
-	background-image: linear-gradient(to top, #29057f, rgba(142, 116, 204, 0.56) 35%, rgba(255, 255, 255, 0));
+	background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(142, 116, 204, 0.56) 65%, #29057f);
 }
 
 .gradient > .desc {
@@ -51,4 +64,78 @@
 .bottom-row {
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+
+.transparent-background {
+	padding: 15px 20px 10px 20px;
+	background-image: linear-gradient(rgba(49, 75, 155, .3), rgba(52, 6, 113, .7));
+	border-radius: 20px;
+}
+
+.transparent-background .fa {
+	font-size: 18px;
+	margin-right: 5px;
+	font-weight: normal;
+}
+
+.rules-wrapper, .chosen-ones {
+	transform: translateY(150%);
+	transition: transform .5s;
+}
+
+.chosen-ones {
+	min-height: 300px;
+}
+
+.rules-wrapper {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0 50px;
+}
+
+.shown {
+	transform: translateY(0);
+}
+
+.rules {
+	position: relative;
+	color: #4b4b4b;
+	background: white;
+	padding: 30px 20px 10px 20px;
+	text-align: justify;
+	height: 600px;
+}
+
+.rules:before {
+	display: inline-block;
+	position: absolute;
+	top: -10px;
+	left: 10px;
+	height: 10px;
+	width: calc(100% - 20px);
+	content: '';
+	opacity: .3;
+	background: white;
+}
+
+.scroll {
+	max-height: 100%;
+}
+
+.close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.vote-allowed {
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+.countdown {
+	font-size: 18px;
 }

@@ -12,15 +12,28 @@ class Chosen extends MY_Model {
 	public function get_with_votes($user_id) {
 
 		$this->db->select([
+			"chosen_ones.id",
 			"chosen_ones.name",
 			"chosen_ones.image",
+			"chosen_ones.ends_on",
 			"COUNT(likes.chosen) as count",
 			"(CASE likes.user WHEN {$user_id} THEN 1 ELSE 0 END) as voted",
+			"'real' as type",
 		]);
 		$this->db->join('likes', "likes.chosen = chosen_ones.id", 'left');
 		$this->db->group_by("chosen_ones.id");
 
-		return parent::get_list();
+		$list = parent::get_list();
+
+		while(count($list) < 4) {
+			$list[] = (object) [
+				'type' => 'dummy',
+				'image' => 'question.png',
+			];
+		}
+
+		return $list;
+	}
 
 	public function enable_all($ends_on) {
 

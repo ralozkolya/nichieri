@@ -81,3 +81,8 @@ function get_lang_code($lang) {
 		case RU: return 'ru';
 	}
 }
+
+function lang_replace($key, $insert) {
+	$lang = lang($key);
+	return str_replace('{%}', $insert, $lang);
+}
