@@ -7,9 +7,17 @@ class App extends MY_Controller {
 
 		parent::__construct();
 
-		if(!$this->data['user']) {
+		$this->load->library(['Facebook' => 'fb']);
+		
+		$fb_user = $this->fb->get_user();
+
+		if(!$fb_user) {
 			redirect('login');
 		}
+
+		$this->load->model('User');
+		$this->User->register($fb_user);
+		$this->data['user'] = $this->User->get_by_key('fb_id', $fb_user['id']);
 	}
 
 	public function index() {
