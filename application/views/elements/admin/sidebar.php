@@ -34,6 +34,17 @@
 			</a>
 		</li>
 		<li>
+			<?php
+				$class = 'unstyled';
+				if($highlighted === 'other') {
+					$class .= ' active';
+				}
+			?>
+			<a class="<?php echo $class; ?>" href="<?php echo base_url('admin/other'); ?>">
+				<?php echo lang('other'); ?>
+			</a>
+		</li>
+		<li>
 			<a class="unstyled" href="<?php echo base_url('logout'); ?>">
 				<?php echo lang('logout'); ?>
 			</a>

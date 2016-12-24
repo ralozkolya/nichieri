@@ -76,6 +76,54 @@ class Admin extends MY_Controller {
 		$this->view('pages/admin/users');
 	}
 
+	public function other() {
+
+		$this->data['highlighted'] = 'other';
+		$this->view('pages/admin/other');
+	}
+
+	public function change_password() {
+
+		if($this->form_validation->run('change_password')) {
+
+			try {
+				$this->User_admin->edit_password($this->data['user']->id, $this->input->post('new_password'));
+				$this->message(lang('changed_successfully'));
+			}
+
+			catch(Exception $e) {
+				$this->message($e->getMessage(), ERROR, FALSE);
+			}
+		}
+
+		else {
+			$this->validation_errors();
+		}
+
+		$this->redirect();
+	}
+
+	public function enable_all() {
+
+		if($this->form_validation->run('enable_all')) {
+
+			try {
+				$this->Chosen->enable_all($this->input->post('ends_on'));
+				$this->message(lang('changed_successfully'));
+			}
+
+			catch(Exception $e) {
+				$this->message($e->getMessage(), ERROR, FALSE);
+			}
+		}
+
+		else {
+			$this->validation_errors();
+		}
+
+		$this->redirect();
+	}
+
 
 	/*	MODIFIERS	*/
 
@@ -213,6 +261,10 @@ class Admin extends MY_Controller {
 		$format = 'Y-m-d H:i:s';
 		$dateTime = DateTime::createFromFormat($format, $date);
 		return $dateTime && $dateTime->format($format) == $date;
+	}
+
+	public function valid_password($password) {
+		return !!$this->auth->check($this->data['user']->username, $password);
 	}
 
 }

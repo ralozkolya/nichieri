@@ -21,6 +21,12 @@ class Chosen extends MY_Model {
 		$this->db->group_by("chosen_ones.id");
 
 		return parent::get_list();
+
+	public function enable_all($ends_on) {
+
+		$this->db->update($this->table, [
+			'ends_on' => $ends_on,
+		]);
 	}
 
 }

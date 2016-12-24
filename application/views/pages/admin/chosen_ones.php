@@ -28,8 +28,8 @@
 						<?php
 							$fields = [
 								['name' => 'name', 'value' => set_value('name')],
-								['name' => 'ends_on', 'value' => set_value('ends_on', date('Y-m-d H:i:s', strtotime('1 day')))],
-								['name' => 'image', 'type' => 'file', 'append' => lang('recommended_size').': 460x400'],
+								['name' => 'ends_on', 'value' => set_value('ends_on', date('Y-m-d H:i:00', strtotime('1 day 1 minute')))],
+								['name' => 'image', 'type' => 'file', 'append' => lang('recommended_size').': 520x400'],
 								['type' => 'submit', 'value' => lang('add')],
 							];
 
