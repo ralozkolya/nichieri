@@ -20,6 +20,10 @@ class User extends MY_Model {
 		}
 	}
 
+	public function total_rows() {
+		return $this->db->get($this->table)->num_rows();
+	}
+
 }
 
 /* End of file User.php */

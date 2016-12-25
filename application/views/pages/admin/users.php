@@ -16,11 +16,23 @@
 			</div>
 
 			<div class="row">
+				<div class="col-xs-12">
+					<?php echo $this->pagination->create_links(); ?>
+				</div>
+			</div>
+
+			<div class="row">
 				<div class="col-md-6">
 					<h3><?php echo lang('users'); ?></h3>
 					<?php echo admin_table('User', $items, [
 						'fb_img', 'name', 'fb_id',
 					]); ?>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<?php echo $this->pagination->create_links(); ?>
 				</div>
 			</div>
 		</div>

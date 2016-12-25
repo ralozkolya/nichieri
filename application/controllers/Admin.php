@@ -19,7 +19,7 @@ class Admin extends MY_Controller {
 
 		$this->load->helper('view');
 		$this->load->language('admin');
-		$this->load->library('form_validation');
+		$this->load->library(['form_validation', 'pagination']);
 		$this->load->model(['Chosen', 'Rules', 'User']);
 
 		$this->data['redirect_base'] = base_url('admin');
@@ -66,11 +66,23 @@ class Admin extends MY_Controller {
 		$this->view('pages/admin/rules');
 	}
 
-	public function users() {
+	public function users($page = 1) {
 
 		$this->data['type'] = $type = 'User';
 
-		$this->data['items'] = $this->get_items($type);
+		$page = abs($page - 1);
+		$limit = 50;
+		$offset = $page * $limit;
+
+		$this->config->load('pagination');
+		$config = $this->config->item('pagination');
+		$config['base_url'] = base_url('admin/users');
+		$config['total_rows'] = $this->User->total_rows();
+		$config['per_page'] = $limit;
+
+		$this->pagination->initialize($config);
+
+		$this->data['items'] = $this->get_items($type, $limit, $offset);
 
 		$this->data['highlighted'] = 'users';
 		$this->view('pages/admin/users');
@@ -239,9 +251,9 @@ class Admin extends MY_Controller {
 		$this->message($message, ERROR, FALSE);
 	}
 
-	private function get_items($type) {
+	private function get_items($type, $limit = NULL, $offset = NULL) {
 
-		$items = $this->$type->get_list();
+		$items = $this->$type->get_list($limit, $offset);
 		return $items;
 	}
 
