@@ -137,5 +137,7 @@
 }
 
 .countdown {
+	display: inline-block;
+	width: 70px;
 	font-size: 18px;
 }
