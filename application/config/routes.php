@@ -59,6 +59,7 @@ $route['admin/login'] = 'login/admin';
 $route['logout'] = 'login/logout';
 $route['add_to_fb'] = 'helper';
 $route['privacy'] = 'helper/privacy';
+$route['redirect'] = 'helper/redirect';
 
 $route['default_controller'] = 'app';
 $route['404_override'] = '';

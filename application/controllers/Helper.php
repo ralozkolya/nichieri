@@ -8,7 +8,7 @@ class Helper extends MY_Controller {
 	}
 
 	public function redirect($path = NULL) {
-		redirect('https://www.facebook.com/gpcvizrunoTsicocxleze/app/624359667744524/');
+		$this->view('pages/redirect');
 	}
 
 	public function privacy() {
