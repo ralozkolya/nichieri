@@ -9,6 +9,7 @@ $(function(){
 		FB.init({
 			appId: '144504032704294',
 			version: 'v2.8',
+			xfbml: true,
 			cookie: true,
 		});
 

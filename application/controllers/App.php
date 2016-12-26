@@ -23,6 +23,10 @@ class App extends MY_Controller {
 	}
 
 	public function index() {
+		$this->chosen_ones();
+	}
+
+	public function chosen_ones() {
 
 		$this->load->model(['Chosen', 'Rules', 'Like']);
 
@@ -32,6 +36,14 @@ class App extends MY_Controller {
 		$this->data['rules'] = $this->Rules->get(1);
 		$this->data['url'] = static_url('uploads/chosen_ones');
 		$this->data['user_allowed'] = $this->user_allowed($last_like);
+
+		for($i = count($this->data['chosen_ones']) + 1; $i <= 4; $i++) {
+			$this->data['chosen_ones'][] = (object) [
+				'type' => 'dummy',
+				'label' => lang("will_be_added_{$i}"),
+				'image' => 'question.png',
+			];
+		}
 
 		$this->view('pages/home');
 	}

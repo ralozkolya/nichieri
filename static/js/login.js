@@ -4,16 +4,12 @@ $(function(){
 		FB.login(checkStatus);
 	});
 
-	function checkStatus(response, login) {
+	function checkStatus(response) {
 		if(response.status === 'connected') {
 			location.assign(url.base);
 		}
 
 		else {
-			if(login) {
-				FB.login(checkStatus);
-			}
-
 			$('.require-login').show();
 			$('.loading').hide();
 		}
@@ -21,7 +17,7 @@ $(function(){
 
 	window.fbAsyncInit = function(){
 		FB.getLoginStatus(function(response){
-			checkStatus(response, true);
+			checkStatus(response);
 		});
 	};
 });

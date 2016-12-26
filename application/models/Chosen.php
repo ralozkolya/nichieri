@@ -23,16 +23,7 @@ class Chosen extends MY_Model {
 		$this->db->join('likes', "likes.chosen = chosen_ones.id", 'left');
 		$this->db->group_by("chosen_ones.id");
 
-		$list = parent::get_list();
-
-		while(count($list) < 4) {
-			$list[] = (object) [
-				'type' => 'dummy',
-				'image' => 'question.png',
-			];
-		}
-
-		return $list;
+		return parent::get_list();
 	}
 
 	public function enable_all($ends_on) {

@@ -34,7 +34,7 @@
 								<?php endif; ?>
 								<div class="vote-button">
 									<?php if($c->type === 'dummy'): ?>
-										<div><?php echo lang_replace('will_be_added', $i + 1); ?></div>
+										<div><?php echo $c->label; ?></div>
 									<?php elseif($now > strtotime($c->ends_on)): ?>
 										<div><?php echo lang('vote_ended'); ?></div>
 									<?php elseif($c->voted && !$user_allowed): ?>

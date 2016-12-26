@@ -4,10 +4,8 @@
 }
 
 #login-button {
-	position: absolute;
-	bottom: 50px;
-	left: 50%;
-	font-size: 25px;
-	padding: 10px 40px;
-	transform: translateX(-50%);
+	margin-bottom: 50px;
+	font-size: 20px;
+	padding: 10px 20px 7px 20px;
+	background-color: rgb(66, 103, 178);
 }
