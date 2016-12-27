@@ -6,7 +6,8 @@
 	<title>ნიჭიერი</title>
 	<meta property="og:url" content="https://pottersapp.com/nichieri/redirect/">
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="ნიჭიერი">
+	<meta property="og:title" content="საგას რჩეული">
+	<meta property="og:description" content="მიეცი ხმა ნიჭიერის მონაწილეებს">
 	<meta property="fb:app_id" content="144504032704294">
 	<meta property="og:image" content="<?php echo static_url('img/banner.jpg'); ?>">
 	<script>
