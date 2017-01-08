@@ -8,8 +8,8 @@
 							<img alt="<?php echo $i->$c; ?>"
 								src="<?php echo $path.$i->$c; ?>">
 						<?php elseif($c === 'fb_img'): ?>
-							<img alt="<?php echo $i->$c; ?>"
-								src="<?php echo $i->$c; ?>">
+							<img alt="<?php echo $i->name; ?>"
+								src="<?php echo "https://graph.facebook.com/{$i->fb_id}/picture"; ?>">
 						<?php else: ?>
 							<?php echo $i->$c; ?>
 						<?php endif; ?>
