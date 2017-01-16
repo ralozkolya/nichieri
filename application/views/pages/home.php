@@ -21,7 +21,7 @@
 			<div class="row chosen-ones shown">
 				<?php if(!empty($chosen_ones)): ?>
 					<?php foreach($chosen_ones as $i => $c): ?>
-						<div class="col-sm-6 text-center">
+						<div class="col-xs-6 text-center">
 							<div class="chosen bpg-nino">
 								<div class="image" style="background-image: url('<?php echo "{$url}/{$c->image}" ?>');"></div>
 								<?php if($c->type === 'real'): ?>
